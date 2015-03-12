@@ -1,78 +1,106 @@
 <!DOCTYPE html>
 
-<html>
+<html ng-app="app">
     <head>
         <title>Detalle Hipoteca</title>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+        <script src="script.js"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
+    <body ng-controller="HipotecaController">
         <form>
             <fieldset>
                 <legend>Hipoteca</legend>
+
+                <label for="id_hipoteca">Id Hipoteca</label>
+                <input id="id_hipoteca" name="id_hipoteca" type="text" 
+                       ng-model="hipoteca.idHipoteca"/> <br/>
+
                 <label for="nombre">Nombre</label>
-                <input id="nombre" name="nombre" type="text"/> <br/>
-                
+                <input id="nombre" name="nombre" type="text"
+                       ng-model="hipoteca.nombre"/> <br/>
+
                 <label for="ape1">Apellido Paterno</label>
-                <input id="ape1" name="ape1" type="text"/> <br/>
-                
+                <input id="ape1" name="ape1" type="text"
+                       ng-model="hipoteca.ape1"/> <br/>
+
                 <label for="ape2">Apellido Materno</label>
-                <input id="ape2" name="ape2" type="text"/> <br/>
-                
+                <input id="ape2" name="ape2" type="text"
+                       ng-model="hipoteca.ape2"/> <br/>
+
                 <label for="nif">Nif</label>
-                <input id="nif" name="nif" type="text"/> <br/>
-                
+                <input id="nif" name="nif" type="text"
+                       ng-model="hipoteca.nif"/> <br/>
+
                 <label for="edad">Edad</label>
-                <input id="edad" name="edad" type="text"/> <br/>
-                
+                <input id="edad" name="edad" type="text"
+                       ng-model="hipoteca.edad"/> <br/>
+
                 <label for="fono">Telefono</label>
-                <input id="fono" name="fono" type="text"/> <br/>
-                
+                <input id="fono" name="fono" type="text"
+                       ng-model="hipoteca.telefono"/> <br/>
+
                 <label for="email">Email</label>
-                <input id="email" name="email" type="text"/> <br/>
-                
+                <input id="email" name="email" type="text"
+                       ng-model="hipoteca.email"/> <br/>
+
                 <label for="salario">Ingresos Mensuales</label>
-                <input id="salario" name="salario" type="text"/> <br/>
-                
+                <input id="salario" name="salario" type="text"
+                       ng-model="hipoteca.ingresosMensuales"/> <br/>
+
                 <label for="capital">Capital</label>
-                <input id="capital" name="capital" type="text"/> <br/>
-                
+                <input id="capital" name="capital" type="text"
+                       ng-model="hipoteca.datosFinancieros.capital"/> <br/>
+
                 <label for="tipo_interes">Tipo Interes</label>
-                <input id="tipo_interes" name="tipo_interes" type="text"/> <br/>
-                
+                <input id="tipo_interes" name="tipo_interes" type="text"
+                       ng-model="hipoteca.datosFinancieros.tipoInteres"/> <br/>
+
                 <label for="tipo_euribor">Tipo Euribor</label>
-                <input id="tipo_euribor" name="tipo_euribor" type="text"/> <br/>
-                
+                <input id="tipo_euribor" name="tipo_euribor" type="text"
+                       ng-model="hipoteca.datosFinancieros.tipoEuribor"/> <br/>
+
                 <label for="euribor">Euribor</label>
-                <input id="euribor" name="euribor" type="text"/> <br/>
-                
+                <input id="euribor" name="euribor" type="text"
+                       ng-model="hipoteca.datosFinancieros.euribor"/> <br/>
+
                 <label for="diferencial">Diferencial</label>
-                <input id="diferencial" name="diferencial" type="text"/> <br/>
-                
+                <input id="diferencial" name="diferencial" type="text"
+                       ng-model="hipoteca.datosFinancieros.diferencial"/> <br/>
+
                 <label for="interes_fijo">Interes Fijo</label>
-                <input id="interes_fijo" name="interes_fijo" type="text"/> <br/>
-                
+                <input id="interes_fijo" name="interes_fijo" type="text"
+                       ng-model="hipoteca.datosFinancieros.interesFijo"/> <br/>
+
                 <label for="plazo_anios">Plazo Anios</label>
-                <input id="plazo_anios" name="plazo_anios" type="text"/> <br/>
-                
+                <input id="plazo_anios" name="plazo_anios" type="text"
+                       ng-model="hipoteca.datosFinancieros.plazoAnyos"/> <br/>
+
                 <label for="producto_seguro_casa">Producto Seguro Casa</label>
-                <input id="producto_seguro_casa" name="producto_seguro_casa" type="text"/> <br/>
-                
+                <input id="producto_seguro_casa" name="producto_seguro_casa" type="checkbox"
+                       ng-model="hipoteca.productosContratados.seguroCasa"/> <br/>
+
                 <label for="producto_nomina">Producto Nomina</label>
-                <input id="producto_nomina" name="producto_nomina" type="text"/> <br/>
-                
+                <input id="producto_nomina" name="producto_nomina" type="checkbox"
+                       ng-model="hipoteca.productosContratados.nomina"/> <br/>
+
                 <label for="producto_seguro_vida">Producto Seguro Vida</label>
-                <input id="producto_seguro_vida" name="producto_seguro_vida" type="text"/> <br/>
-                
+                <input id="producto_seguro_vida" name="producto_seguro_vida" type="checkbox"
+                       ng-model="hipoteca.productosContratados.seguroVida"/> <br/>
+
                 <label for="cuota_mensual">Cuota Mensual</label>
-                <input id="cuota_mensual" name="cuota_mensual" type="text"/> <br/>
-                
+                <input id="cuota_mensual" name="cuota_mensual" type="text" 
+                       ng-model="hipoteca.cuotaMensual"
+                       ng-disabled="true"/> <br/>
+
                 <label for="interes_aplicado">Interes Aplicado</label>
-                <input id="interes_aplicado" name="interes_aplicado" type="text"/> <br/>
-                
+                <input id="interes_aplicado" name="interes_aplicado" type="text"
+                       ng-model="hipoteca.interesAplicado"/> <br/>
+
             </fieldset>
-                
+
         </form>
-        
+
     </body>
 </html>
