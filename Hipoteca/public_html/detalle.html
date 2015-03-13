@@ -54,24 +54,40 @@
                        ng-model="hipoteca.datosFinancieros.capital"/> <br/>
 
                 <label for="tipo_interes">Tipo Interes</label>
-                <input id="tipo_interes" name="tipo_interes" type="text"
-                       ng-model="hipoteca.datosFinancieros.tipoInteres"/> <br/>
+                <select id="tipo_interes" name="tipo_interes" 
+                        ng-model="hipoteca.datosFinancieros.tipoInteres">
+                    <option value="">Elige una opcion</option>
+                    <option value="F">FIJO</option>
+                    <option value="V">VARIABLE</option>
+                </select><br/>
 
                 <label for="tipo_euribor">Tipo Euribor</label>
-                <input id="tipo_euribor" name="tipo_euribor" type="text"
-                       ng-model="hipoteca.datosFinancieros.tipoEuribor"/> <br/>
+                <select id="tipo_euribor" name="tipo_euribor" 
+                        ng-model="hipoteca.datosFinancieros.tipoEuribor"
+                        ng-disabled="hipoteca.datosFinancieros.tipoInteres === 'F' 
+                                    || hipoteca.datosFinancieros.tipoInteres === ''">
+                    <option value="">Elige una opcion</option>
+                    <option value="E">EURIBOR</option>
+                    <option value="E3">EURIBOR3</option>
+                </select><br/>
 
                 <label for="euribor">Euribor</label>
                 <input id="euribor" name="euribor" type="text"
-                       ng-model="hipoteca.datosFinancieros.euribor"/> <br/>
+                       ng-model="hipoteca.datosFinancieros.euribor"
+                       ng-disabled="hipoteca.datosFinancieros.tipoInteres === 'F' 
+                                   || hipoteca.datosFinancieros.tipoInteres === ''"/> <br/>
 
                 <label for="diferencial">Diferencial</label>
                 <input id="diferencial" name="diferencial" type="text"
-                       ng-model="hipoteca.datosFinancieros.diferencial"/> <br/>
+                       ng-model="hipoteca.datosFinancieros.diferencial"
+                       ng-disabled="hipoteca.datosFinancieros.tipoInteres === 'F' 
+                                   || hipoteca.datosFinancieros.tipoInteres === ''"/> <br/>
 
                 <label for="interes_fijo">Interes Fijo</label>
                 <input id="interes_fijo" name="interes_fijo" type="text"
-                       ng-model="hipoteca.datosFinancieros.interesFijo"/> <br/>
+                       ng-model="hipoteca.datosFinancieros.interesFijo"
+                       ng-disabled="hipoteca.datosFinancieros.tipoInteres ==='V' 
+                                   || hipoteca.datosFinancieros.tipoInteres === ''"/> <br/>
 
                 <label for="plazo_anios">Plazo Anios</label>
                 <input id="plazo_anios" name="plazo_anios" type="text"
@@ -96,7 +112,8 @@
 
                 <label for="interes_aplicado">Interes Aplicado</label>
                 <input id="interes_aplicado" name="interes_aplicado" type="text"
-                       ng-model="hipoteca.interesAplicado"/> <br/>
+                       ng-model="hipoteca.interesAplicado"
+                       ng-disabled="true"/> <br/>
 
             </fieldset>
 
