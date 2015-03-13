@@ -32,8 +32,8 @@ app.controller("HipotecaController", ['$scope', function ($scope) {
             interesAplicado: 0.987,
             datosFinancieros: {
                 capital: 150000,
-                tipoInteres: "VARIABLE",
-                tipoEuribor: "EURIBOR3",
+                tipoInteres: "V",
+                tipoEuribor: "E3",
                 euribor: 0.287,
                 diferencial: 0.9,
                 interesFijo: 0,
