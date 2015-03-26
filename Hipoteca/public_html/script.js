@@ -18,6 +18,23 @@
 var app = angular.module("app", []);
 
 app.controller("HipotecaController", ['$scope', function ($scope) {
+
+        $scope.euribores = [{
+                codEur: "E",
+                descripcion: "EURIBOR"
+            }, {
+                codEur: "E3",
+                descripcion: "EURIBOR3"
+            }];
+
+        $scope.tiposInteres = [{
+                codInt: "F",
+                descripcion: "FIJO"
+            }, {
+                codInt : "V",
+                descripcion : "VARIABLE"
+            }];
+
         $scope.hipoteca = {
             idHipoteca: 3,
             nombre: "Juan",
